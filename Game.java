@@ -24,12 +24,6 @@ public class Game {
 	// set up the game in this static block
 	static {
 
-		// Mekka
-		Pokecenter mekkaCenter = new Pokecenter("Mekka's Moskee");
-		Area mekka = new Area("Mekka", null, false, null, mekkaCenter);
-		mekka.setContainsPokemon(Arrays.asList(PokemonType.MARROKAAN, PokemonType.MARROKANENMOEDER,
-				PokemonType.MARROKANENVADER, PokemonType.GEERTWILDERS));
-
 		// PALLET Town
 		Pokecenter palletCenter = new Pokecenter("Pallet Town's Pokecenter");
 		Area palletTown = new Area("Pallet town", null, false, mekka, palletCenter);
@@ -58,7 +52,6 @@ public class Game {
 		areas.add(viridianCity);
 		areas.add(pewterCity);
 		areas.add(palletTown);
-		areas.add(mekka);
 
 		// SETUP gym leaders
 		GymLeader pewterLeader = new GymLeader("Bram", new Badge("Boulder Badge"), pewterCity);
@@ -88,22 +81,13 @@ public class Game {
 		palletTown.setGymLeader(palletLeader);
 
 		// Curulean city
-		GymLeader curuleanLeader = new GymLeader("Daniël", new Badge("Water Badge"), ceruleanCity);
+		GymLeader curuleanLeader = new GymLeader("Daniï¿½l", new Badge("Water Badge"), ceruleanCity);
 		Pokemon d = new Pokemon(PokemonData.SQUIRTLE);
 		d.setLevel(3);
 		d.setOwner(curuleanLeader);
 		curuleanLeader.setActivePokemon(d);
 		curuleanLeader.getPokemonCollection().add(d);
 		ceruleanCity.setGymLeader(curuleanLeader);
-
-		// Curulean city
-		GymLeader mekkaLeader = new GymLeader("Yousoef", new Badge("Free Palestina"), mekka);
-		Pokemon e = new Pokemon(PokemonData.AHMED);
-		e.setLevel(30);
-		e.setOwner(mekkaLeader);
-		mekkaLeader.setActivePokemon(e);
-		mekkaLeader.getPokemonCollection().add(e);
-		mekka.setGymLeader(mekkaLeader);
 	}
 
 	public static void main(String[] args) {

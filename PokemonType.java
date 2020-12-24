@@ -24,15 +24,7 @@ public enum PokemonType {
     PSYCHIC,
     ROCK,
     WATER,
-	MARROKAAN,
-	MARROKANENMOEDER,
-	MARROKANENVADER,
-	GEERTWILDERS,
-	AHMANAGER,
-	TEAMLEIDER,
-	MEDEWERKER,
-	KLANTEN,
-	BONUSPRODUCTEN;
+
 
     static {
         BUG.strongAgainst.addAll(Arrays.asList(GRASS, PSYCHIC));
@@ -48,15 +40,7 @@ public enum PokemonType {
         PSYCHIC.strongAgainst.addAll(Arrays.asList(FIGHTING, POISON));
         ROCK.strongAgainst.addAll(Arrays.asList(FLYING, BUG, FIRE, ICE));
         WATER.strongAgainst.addAll(Arrays.asList(GROUND, ROCK, FIRE));
-        MARROKAAN.strongAgainst.addAll(Arrays.asList(GROUND));
-        MARROKANENMOEDER.strongAgainst.addAll(Arrays.asList(MARROKAAN));
-        MARROKANENVADER.strongAgainst.addAll(Arrays.asList(MARROKANENMOEDER));
-        GEERTWILDERS.strongAgainst.addAll(Arrays.asList(MARROKAAN, MARROKANENMOEDER, MARROKANENVADER));
-        AHMANAGER.strongAgainst.addAll(Arrays.asList(TEAMLEIDER, MEDEWERKER, KLANTEN));
-        TEAMLEIDER.strongAgainst.addAll(Arrays.asList(MEDEWERKER, KLANTEN));
-        MEDEWERKER.strongAgainst.addAll(Arrays.asList(KLANTEN, BONUSPRODUCTEN));
-        KLANTEN.strongAgainst.addAll(Arrays.asList(MEDEWERKER));
-        BONUSPRODUCTEN.strongAgainst.addAll(Arrays.asList(KLANTEN));
+
 
         BUG.weakAgainst.addAll(Arrays.asList(FIGHTING, FLYING, POISON, GHOST, FIRE));
         DRAGON.weakAgainst.addAll(Collections.emptyList());
@@ -71,15 +55,7 @@ public enum PokemonType {
         PSYCHIC.weakAgainst.addAll(Collections.singletonList(PSYCHIC));
         ROCK.weakAgainst.addAll(Arrays.asList(FIGHTING, GROUND));
         WATER.weakAgainst.addAll(Arrays.asList(WATER, GRASS, DRAGON));
-        MARROKAAN.weakAgainst.addAll(Arrays.asList(MARROKANENMOEDER));
-        MARROKANENMOEDER.weakAgainst.addAll(Arrays.asList(MARROKANENVADER));
-        MARROKANENVADER.weakAgainst.addAll(Arrays.asList(FIRE));
-        GEERTWILDERS.weakAgainst.addAll(Arrays.asList(POISON));
-        AHMANAGER.weakAgainst.addAll(Arrays.asList(POISON));
-        TEAMLEIDER.weakAgainst.addAll(Arrays.asList(AHMANAGER));
-        MEDEWERKER.weakAgainst.addAll(Arrays.asList(AHMANAGER, TEAMLEIDER, KLANTEN));
-        KLANTEN.weakAgainst.addAll(Arrays.asList(AHMANAGER, TEAMLEIDER, MEDEWERKER, BONUSPRODUCTEN));
-        BONUSPRODUCTEN.weakAgainst.addAll(Arrays.asList(MEDEWERKER));
+
 
         BUG.typeAttacks.addAll(Arrays.asList(
                 new Attack("Bug Bite", 10, 100),
@@ -154,43 +130,7 @@ public enum PokemonType {
                 new Attack("Lick", 30, 100),
                 new Attack("Night Shade", 65, 100)));
         
-        MARROKAAN.typeAttacks.addAll(Arrays.asList(
-        		new Attack("Neven bellen", 70, 100),
-        		new Attack("Geit neuken", 50, 100),
-        		new Attack("IK HOEF NIET TE TANKEN SCHAT, DAAAGHHH", 60, 100),
-        		new Attack("JIJ SPEELT MET MIJN PRIVÉ", 15, 100)));
-        
-        MARROKANENMOEDER.typeAttacks.addAll(Arrays.asList(
-        		new Attack("Slaan met slipper", 70, 100),
-        		new Attack("Slipper gooien", 20, 100),
-        		new Attack("Uit huis gooien", 50, 100)));
-        
-        MARROKANENVADER.typeAttacks.addAll(Arrays.asList(
-        		new Attack("Met riem slaan", 70, 100),
-        		new Attack("Kebab shop openen", 100, 100)));
-        
-        GEERTWILDERS.typeAttacks.addAll(Arrays.asList(
-        		new Attack("Land uitzetten", 700, 100)));
-        
-        AHMANAGER.typeAttacks.addAll(Arrays.asList(
-        		new Attack("Terug sturen naar de zelfsan", 50, 100),
-        		new Attack("Gluren vanuit de winkel", 20, 100),
-        		new Attack("Eerder naar huis gaan", 60, 100)));
-        
-        TEAMLEIDER.typeAttacks.addAll(Arrays.asList(
-        		new Attack("Mandjes op laten ruimen", 40, 100),
-        		new Attack("Gratis bloemen mee geven", 70, 100),
-        		new Attack("Kan je iets langer blijven?", 100, 100),
-        		new Attack("Maak je kassa schoon!", 85, 100)));
-        
-        MEDEWERKER.typeAttacks.addAll(Arrays.asList(
-        		new Attack("Product tevaak scannen", 70, 100),
-        		new Attack("gebruikt filiaalcode ipv bonuskaart klant", 110, 100),
-        		new Attack("Magazijn inlopen om product te zoeken maar insta checken", 80, 100)));
-        
-        KLANTEN.typeAttacks.addAll(Arrays.asList(
-        		new Attack("Vragen of een product er is", 80, 100),
-        		new Attack("Zeiken over €0,05", 110, 100)));
+
     }
 
     public final List<PokemonType> weakAgainst = new ArrayList<>();

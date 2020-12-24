@@ -158,10 +158,7 @@ public enum PokemonData {
     DRAGONITE(100, PokemonType.DRAGON, 30, 15),
     MEWTWO(100, PokemonType.PSYCHIC, 30, 15),
     MEW(100, PokemonType.PSYCHIC, 30, 15),
-	AHMED(100, PokemonType.MARROKAAN, 30, 15),
-	FATIMA(100, PokemonType.MARROKANENMOEDER, 30, 15),
-	MOHAMMED(100, PokemonType.MARROKANENVADER, 30, 15),
-	GEERT(100, PokemonType.GEERTWILDERS, 30, 15);
+
 	
 
     static {
